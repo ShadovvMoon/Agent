@@ -27,7 +27,7 @@
 var crypto = require('crypto');
 var express = require('express');
 var override = require("./override");
-var Store = require('ministore')('database');
+var Store = require('./ministore')('database');
 var configuration = Store('config');
 var portscanner = require('portscanner');
 var readline = require('readline');
@@ -162,7 +162,6 @@ module.exports.createAgent = (function (app, callback) {
             xhr.onload = function () {
                 var xmlDoc = xhr.responseText;
                 var jsonResponse = JSON.parse(xmlDoc);
-
                 callback(jsonResponse, '');
             }
 
